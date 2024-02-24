@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <script type="text/javascript">
+    var db;
+
+    function initDatabase() {
+      if (window.openDatabase) {
+        var dbName = 'loginDB';
+        var dbVersion = '1.0';
+        var dbDesc = 'Login Database';
+        var dbSize = 2 * 1024 * 1024; // 2MB
+
+        db = openDatabase(dbName, dbVersion, dbDesc, dbSize);
+
+        db.transaction(function(tx) {
+          tx.executeSql('CREATE TABLE IF NOT EXISTS users (username TEXT, password TEXT)');
+        });
+      } else {
+        alert('Web SQL Database is not supported in this browser.');
+      }
+    }
+
+    function createAccount() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      db.transaction(function(tx) {
+        tx.executeSql('INSERT INTO users (username, password) VALUES (?, ?)', [username, password], function(tx, result) {
+          alert('Account created successfully!');
+        }, function(tx, error) {
+          alert('Error creating account: ' + error.message);
+        });
+      });
+    }
+
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], function(tx, result) {
+          if (result.rows.length > 0) {
+            alert('Login successful!');
+          } else {
+            alert('Invalid username or password!');
+          }
+        }, function(tx, error) {
+          alert('Error checking login credentials: ' + error.message);
+        });
+      });
+    }
+  </script>
+</head>
+<style>
+
+input[type=text],input[type=password]{
+padding:11px 20px;
+border:1px solid black;
+border-radius:5px;
+}
+button{
+align-items:center;
+justify-content:center;
+font-size:25px;
+}
+section
+ {
+ background-image: url('https://i.pinimg.com/564x/bc/db/2b/bcdb2b79870496dc944df35490db10b1.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 800px;
+ font-family: 'Poppins', sans-serif;
+
+ }
+.center-box
+{
+position:fixed;
+margin:15% auto 45% 35%;
+border:1px solid black;
+border-radius:8px;
+background-color:BurlyWood;
+width:380px;
+font-size:20px;
+padding:10px;
+
+}
+.animate{
+-webkit-animation:animatezoom 0.6s;
+animation:animatezoom 0.6
+}
+@media screen and (max-width:300px)
+{
+{
+span.psword{
+display:block;
+float:none;
+}
+}
+@keyframes animatezoom{
+from{
+transform:scale(0);
+}
+to{
+transform:scale(1);
+}
+}
+
+</style>
+<body onload="initDatabase()">
+<section>
+
+<div class="center-box">
+<h1 align="center">Login Page</h1>
+  <label for="username">Username:</label>
+  <input type="text" id="username"> <br>
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" id="password">
+  <br> <br>
+  <button onclick="login()">Login</button>
+  <button onclick="createAccount()">Create Account</button>
+  <br>
+<br>
+<h5>Click the below link after Logging in</h5>
+   <a href=firstpage.html>Click me!</a>
+</div>
+</section>
+</body>
+</html>

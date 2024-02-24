@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  body {
+    background-repeat: no-repeat;
+  }
+  button {
+    font-size: 30px;
+  }
+  .container .button {
+    position:absolute;
+    top:80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: GoldenRod;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .container .button:hover {
+    background-color:black;
+  }
+</style>
+<body>
+  <div class="container">
+    <img src="C:\Users\nvsur\Downloads\Firstpageimage.jpg" alt="image is not available">
+    <button class="button" onclick="redirectToPage()">EXPLORE NOW!!</button>
+  </div>
+
+  <script>
+    function redirectToPage() {
+      window.location.href = 'nextpage.html';
+    }
+  </script>
+</body>
+</html>

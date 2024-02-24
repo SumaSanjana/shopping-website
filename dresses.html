@@ -1,0 +1,213 @@
+<DOCTYPE! html>
+<html>
+<head>
+<style>
+body{
+background-image:url("http://getwallpapers.com/wallpaper/full/2/e/9/24198.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+div.images{
+border:1px solid #ccc;
+}
+div.images:hover{
+border:1px solid #777;
+}
+div.images img{
+width:100%;
+height:auto;
+}
+div.glam{
+padding:15px;
+text-align:center;
+}
+*{
+box-sizing:border-box;
+}
+.result{
+padding:0 6px;
+float:left;
+width:25%;
+}
+</style>
+<script>
+    var addCart = 0;
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const addToWishlistButton = document.querySelector('.add-to-wishlist');
+    const addedToCartMessage = document.querySelector('.added-to-cart');
+    const addedToWishlistMessage = document.querySelector('.added-to-wishlist');
+    const cartCount = document.querySelector('.navbar .cart-icon .count');
+    const wishlistCount = document.querySelector('.navbar .wishlist-icon .count');
+    const sizeError = document.getElementById('size-error');
+    
+    let cartItems = 0;
+    let wishlistItems = 0;
+    
+    addToCartButton.addEventListener('click', () => {
+      const selectedSize = document.querySelector('input[name="size"]:checked');
+      if (!selectedSize) {
+        sizeError.textContent = 'Please select a size.';
+      } else {
+        sizeError.textContent = '';
+        addedToCartMessage.classList.add('show');
+        addedToWishlistMessage.classList.remove('show');
+        cartItems++;
+        cartCount.textContent = cartItems;
+      }
+    });
+    
+    addToWishlistButton.addEventListener('click', () => {
+      const selectedSize = document.querySelector('input[name="size"]:checked');
+      if (!selectedSize) {
+        sizeError.textContent = 'Please select a size.';
+      } else {
+        sizeError.textContent = '';
+        addedToWishlistMessage.classList.add('show');
+        addedToCartMessage.classList.remove('show');
+        wishlistItems++;
+        wishlistCount.textContent = wishlistItems;
+      }
+    });
+function changeImage(element,newImageUrl)
+{
+element.src=newImageUrl;
+}
+</script>
+<script src="./addtocart.js"></script>
+</head>
+<body>
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/I/0/1/p/4786/250/044/2/w/750/4786250044_6_1_1.jpg?ts=1685975534471" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/I/0/1/p/4786/250/044/2/w/750/4786250044_2_1_1.jpg?ts=1686126004675');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/I/0/1/p/4786/250/044/2/w/750/4786250044_6_1_1.jpg?ts=1685975534471');">
+<div class="glam">Short Printed Dress</div>
+<a href=https://www.zara.com/in/en/short-printed-dress-p04786250.html?v1=267208642 >Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/9878/107/070/2/w/563/9878107070_6_1_1.jpg?ts=1677076079402" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/9878/107/070/2/w/563/9878107070_2_1_1.jpg?ts=1677246328982');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/9878/107/070/2/w/563/9878107070_6_1_1.jpg?ts=1677076079402');">
+<div class="glam">Short Polka Dot Dress</div>
+<a href=https://www.zara.com/in/en/short-dress-with-a-polka-dot-print-p09878107.html?v1=236867345>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2492/070/330/2/w/563/2492070330_6_1_1.jpg?ts=1681226695603" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2492/070/330/2/w/563/2492070330_2_1_1.jpg?ts=1681207932129');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2492/070/330/2/w/563/2492070330_6_1_1.jpg?ts=1681226695603');">
+<div class="glam">Printed Dress with Elastic</div>
+<a href=https://www.zara.com/in/en/printed-dress-with-elastic-waist-p02492070.html?v1=249597368>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2818/939/250/2/w/563/2818939250_6_1_1.jpg?ts=1682503706002" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2818/939/250/2/w/563/2818939250_2_1_1.jpg?ts=1682516123724');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2818/939/250/2/w/563/2818939250_6_1_1.jpg?ts=1682503706002');">
+<div class="glam">Linen Blend Dress</div>
+<a href=https://www.zara.com/in/en/linen-blend-dress-p02818939.html?v1=262329818>Buy Now!!</a>
+</div>
+</div>
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2366/851/800/2/w/563/2366851800_6_1_1.jpg?ts=1673369144501" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2366/851/800/17/w/563/2366851800_2_1_1.jpg?ts=1678984668763');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2366/851/800/2/w/563/2366851800_6_1_1.jpg?ts=1673369144501');">
+<div class="glam"> Satin Shirt Dress  </div>
+<a href="https://www.zara.com/in/en/satin-shirt-dress-p02366851.html?v1=259497930">Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/3152/305/538/2/w/967/3152305538_6_1_1.jpg?ts=1671032779913" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/8538/332/538/2/w/563/8538332538_2_1_1.jpg?ts=1673979165106');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/3152/305/538/2/w/967/3152305538_6_1_1.jpg?ts=1671032779913');">
+<div class="glam">Draped Dress    </div>
+<a href= https://www.zara.com/in/en/draped-dress-p08538332.html?v1=230511838  >Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/8342/327/450/2/w/563/8342327450_6_1_1.jpg?ts=1677228085364" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/8342/327/450/2/w/563/8342327450_2_1_1.jpg?ts=1677230717376');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/8342/327/450/2/w/563/8342327450_6_1_1.jpg?ts=1677228085364');">
+<div class="glam">Draped Tuli Dress</div>
+<a href=https://www.zara.com/in/en/draped-tulle-dress-p08342327.html?v1=231860839>Buy Now!!</a></div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2670/187/632/2/w/563/2670187632_6_1_1.jpg?ts=1675773498930" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2670/187/632/2/w/563/2670187632_2_1_1.jpg?ts=1675870957603');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2670/187/632/2/w/563/2670187632_6_1_1.jpg?ts=1675773498930');">
+<div class="glam">Dress with a sweetheart Neckilne</div>
+<a href=https://www.zara.com/in/en/dress-with-a-sweetheart-neckline-p02670187.html?v1=242308373>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2780/127/330/2/w/563/2780127330_6_1_1.jpg?ts=1676386310147" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2780/127/330/2/w/563/2780127330_2_1_1.jpg?ts=1676479198861');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2780/127/330/2/w/563/2780127330_6_1_1.jpg?ts=1676386310147');">
+<div class="glam">Floral Print Dress    </div>
+<a href=https://www.zara.com/in/en/floral-print-dress-p02780127.html?v1=244867876   >Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/3401/243/044/2/w/563/3401243044_6_1_1.jpg?ts=1681380338875" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/3401/243/044/2/w/563/3401243044_2_1_1.jpg?ts=1681285941470');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/3401/243/044/2/w/563/3401243044_6_1_1.jpg?ts=1681380338875');">
+<div class="glam">Floral Print Dress</div>
+<a href=https://www.zara.com/in/en/floral-print-midi-dress-p03401243.html?v1=277568909>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/I/0/1/p/7944/939/505/2/w/563/7944939505_6_1_1.jpg?ts=1686843043617" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/I/0/1/p/7944/939/505/2/w/563/7944939505_2_1_1.jpg?ts=1687190136622');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/I/0/1/p/7944/939/505/2/w/563/7944939505_6_1_1.jpg?ts=1686843043617');">
+<div class="glam"> Linen Blend Midi Shirt Dress</div>
+<a href=https://www.zara.com/in/en/linen-blend-midi-shirt-dress-p07944939.html?v1=271147304>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/2916/331/916/2/w/563/2916331916_6_1_1.jpg?ts=1682421462858" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2916/331/916/2/w/563/2916331916_1_1_1.jpg?ts=1682421461881');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/2916/331/916/2/w/563/2916331916_6_1_1.jpg?ts=1682421462858');">
+<div class="glam">Satin Slip Dress</div>
+<a href=https://www.zara.com/in/en/satin-slip-dress-p02916331.html?v1=257920372>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/0264/154/400/2/w/563/0264154400_6_1_1.jpg?ts=1680508876757" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/0264/154/400/2/w/563/0264154400_1_1_1.jpg?ts=1680534080230');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/0264/154/400/2/w/563/0264154400_6_1_1.jpg?ts=1680508876757');">
+<div class="glam">Printed Midi Dress</div>
+<a href=https://www.zara.com/in/en/printed-midi-dress-p02957306.html?v1=247921137>Buy Now!!</a>
+</div>
+</div>
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/3269/371/620/2/w/563/3269371620_6_1_1.jpg?ts=1682336703853" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/3269/371/620/2/w/563/3269371620_1_1_1.jpg?ts=1682669816458');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/3269/371/620/2/w/563/3269371620_6_1_1.jpg?ts=1682336703853');">
+<div class="glam">Draped Dress with Straps</div>
+<a href=https://www.zara.com/in/en/draped-dress-with-straps-p03269371.html?v1=255780535>Buy Now!!</a>
+</div>
+</div>
+
+
+<div class="result">
+<div class="images">
+<img src="https://static.zara.net/photos///2023/V/0/1/p/6164/025/707/2/w/563/6164025707_6_1_1.jpg?ts=1676035836714" alt="Change" width="600" height="400" onmouseover="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/6164/025/707/2/w/563/6164025707_2_1_1.jpg?ts=1676479190009');" onmouseout="changeImage(this,'https://static.zara.net/photos///2023/V/0/1/p/6164/025/707/2/w/563/6164025707_6_1_1.jpg?ts=1676035836714');">
+<div class="glam">Short Printed Dress</div>
+<a href=https://www.zara.com/in/en/short-printed-dress-p04786250.html?v1=267208642 >Buy Now!!</a>
+</div>
+</div>
+
+
+
+</body>
+</html>

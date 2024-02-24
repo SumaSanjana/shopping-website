@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product selection</title>
+<style>
+ .clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-header:before, .modal-header:after, .modal-footer:before, .modal-footer:after
+{
+display:table;content:" ";
+}
+.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical > .btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-header:after, .modal-footer:after
+{
+clear:both;
+}
+
+.navhead{background-color: #000;padding: 0;margin: 0;}
+    .navlist li{list-style-type: none;font-weight: bold;color: #fff;float: left;font-size: 15px;line-height: 20px;padding: 0 20px;position: relative;
+}
+.redback{background-color: rgb(230, 74, 74);width: 22px;height: 22px;border-radius: 50%;position: absolute;top: 0;right: 0;text-align: center;}
+
+.navbar{
+background-color:#333;
+color:#fff;
+padding:10px;
+}
+.navbar a{
+color:#fff;
+text-decoration:none;
+margin-right:20px;
+}
+.navbar .cart-icon .count{
+position:relative;
+}
+
+.navbar cart-icon .count{
+position:absolute;
+top:-5px;
+right:10px;
+background-color:red;
+color:#fff;
+font-size:12px;
+padding:2px 5px;
+border-radius:50%;
+}
+
+.product-container
+{
+display:flex;
+align-items;
+margin-bottom:20px;
+}
+.product-image{
+width:600px;
+margin-right:20px;
+}
+.error-image{
+color:red;
+font-size:12px;
+margin-top:5px;
+}
+.size-container{
+display:flex;
+flex-wrap;
+}
+.size-container label{
+display:inline-block;
+border:1px solid #ccc;
+padding:5px 10px;
+margin-right:10px;
+margin-bottom:10px;
+}
+.size-container input[type="radio"]
+{
+display:none;
+}
+.size-container input[type="radio"]:checked+label
+{
+background-color:#ccc;
+}
+
+.actions{
+display:flex;
+margin-top:10px;
+}
+.action-button{
+display:inline-block;
+padding:10px 20px;
+background-color:#ccc;
+border:none;
+margin-right:10px;
+cursor:pointer;
+}
+.action-button:hover{
+background-color:#999;
+}
+.added-to-cart{
+display:none;
+color:black;
+margin-top:10px;
+}
+
+.added-to-cart.show{
+display:block;
+}
+
+  </style>
+
+
+
+<body>
+
+  <article class="clearfix navhead">
+    <ul class="clearfix navlist">
+      <li>Cart
+        <article id="Addtocart" class="redback"></article>
+      </li>
+      <li>Wishlist</li>
+    </ul>
+  </article>
+<h1>Product selection</h1>
+<div class="product-container">
+<img class="product-image" src="https://static.zara.net/photos///2023/I/0/2/p/7446/301/427/2/w/750/7446301427_6_1_1.jpg?ts=1686757100113" alt="Image">
+<div>
+<div class="size-container">
+<input type="radio" id="size-s" name="size" value="s">
+<label for="size-s">S</label>
+<input type="radio" id="size-m" name="size" value="m">
+<label for="size-m">m</label>
+<input type="radio" id="size-l" name="size" value="l">
+<label for="size-l">l</label>
+<input type="radio" id="size-xl" name="size" value="xl">
+<label for="size-xl">xl</label>
+</div>
+<div class="error-message" id="size-error"></div>
+<div class="actions">
+<button class="action-button add-to-cart" onclick="addcart()">Add to cart</button>
+</div>
+
+<div class="added-to-cart">Added-to-cart</div>
+</div>
+</div>
+
+<script>
+var addCart=0;
+const addToCartButton=document.querySelector('.add-to-cart');
+const addedToCartMessage=document.querySelector('.added-to-cart');
+const cartCount=document.querySelector('.navbar .cart-icon .count');
+const sizeError=document.getElementById('size-error');
+
+let cartItems=0;
+
+addToCartButton.addEventListener('click,()=>{
+const selectedSize=document.querySelector('input[name="size"]:checked');
+if(!selectedSize)
+{
+sizeError.textContent='Please select a size.';
+}
+else
+{
+sizeError.textContent= ' ';
+addedToCartMessage.classList.add('show');
+cartItems++;
+cartCount.textContent=cartItems;
+}
+}
+);
+</script>
+<script src="./addtocart.js"></script>  
+
+</body>
+</html>
